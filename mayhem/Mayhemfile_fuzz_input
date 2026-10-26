@@ -1,0 +1,10 @@
+project: savantenvs/nnn
+target: fuzz_input
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_input/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_input
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_input/fuzz_input.dict
+    timeout: 5

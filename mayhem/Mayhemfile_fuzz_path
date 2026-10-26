@@ -1,0 +1,10 @@
+project: savantenvs/nnn
+target: fuzz_path
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_path/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_path
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_path/fuzz_path.dict
+    timeout: 5
